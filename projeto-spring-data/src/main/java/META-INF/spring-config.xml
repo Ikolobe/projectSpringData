@@ -21,7 +21,7 @@
 		<property name="driverClassName" value="org.postgresql.Driver"/>
 		<property name="url" value="jdbc:postgresql://localhost:5432/projetospringdata"/>
 		<property name="username" value="postgres"/>
-		<property name="passwork" value="admin"/>
+		<property name="password" value="admin"/>
 	</bean>
 
 	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" scope="singleton">
