@@ -42,6 +42,4 @@
 	<jpa:repositories
 		base-package="com.projeto.spring.data.dao" />
 	
-
-
 </beans>
