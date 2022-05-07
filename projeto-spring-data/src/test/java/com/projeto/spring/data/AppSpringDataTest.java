@@ -10,6 +10,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.projeto.spring.data.dao.InterfaceSpringDataUser;
+import com.projeto.spring.data.dao.InterfaceTelefone;
+import com.projeto.spring.data.model.Telefone;
 import com.projeto.spring.data.model.UsuarioSpringData;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -18,6 +20,10 @@ public class AppSpringDataTest {
 
 	@Autowired
 	private InterfaceSpringDataUser interfaceSpringDataUser;
+	
+	@Autowired
+	private InterfaceTelefone interfaceTelefone;
+	
 	
 	@Test
 	public void testeInsert() {
@@ -66,6 +72,11 @@ public class AppSpringDataTest {
 			System.out.println(usuarioSpringData.getLogin());
 			System.out.println(usuarioSpringData.getSenha());
 			System.out.println(usuarioSpringData.getIdade());
+			
+			for (Telefone telefone : usuarioSpringData.getTelefones()) {
+				System.out.println(telefone.getTipo());
+				System.out.println(telefone.getNumero());
+			}
 		}
 	}
 	
@@ -89,5 +100,19 @@ public class AppSpringDataTest {
 	public void testeAtualizarEmailPorNome() {
 		interfaceSpringDataUser.atualizarEmailPorNome("gentil.marie@gmail.com", "Gentil");
 		
+	}
+	
+	@Test
+	public void testeInsertTelefone() {
+		
+		Telefone telefone = new Telefone();
+		Optional<UsuarioSpringData> usuarioSpringData = interfaceSpringDataUser.findById(2L);
+		UsuarioSpringData user = usuarioSpringData.get();
+		
+		telefone.setNumero("985429771");
+		telefone.setTipo("Celular");
+		telefone.setUsuarioSpringData(user);
+		interfaceTelefone.save(telefone);
+	
 	}
 }
