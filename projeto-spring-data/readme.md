@@ -15,12 +15,12 @@ Copie as 3 linhas de código que será algo parecido com(\_auth = exemplo | emai
 Cole no .npmrc que você criou na raiz do seu código.
 Depois copie e cole 'registry=https://artifactory.dimed.com.br/artifactory/api/npm/npm-dimed'.
 Seu arquivo .npmrc deverá ficar da seguinte maneira :
-
+'''
 1. **\_auth = exemplo**
 2. **email = exemplo@grupopanvel.com.br**
 3. **always-auth = true**
 4. **registry=https://artifactory.dimed.com.br/artifactory/api/npm/npm-dimed**
-
+'''
 Depois do .npmrc configurado, abra um terminal e execute o seguinte código :
 
 **_Linux/Mac:_** "rm -rf node\*modules package-lock.json"
