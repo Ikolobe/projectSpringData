@@ -21,9 +21,11 @@ Seu arquivo .npmrc deverá ficar da seguinte maneira :
 3. **always-auth = true**
 4. **registry=https://artifactory.dimed.com.br/artifactory/api/npm/npm-dimed**
 
-Depois do .npmrc configurado, abra um terminal e execute o seguinte código :  
-**_Linux/Mac:_** "rm -rf node*modules package-lock.json"
-\*\*\_Windows:*\*\* "npm i --legacy-peer-deps"
+Depois do .npmrc configurado, abra um terminal e execute o seguinte código :
+
+**_Linux/Mac:_** "rm -rf node\*modules package-lock.json"
+
+**_Windows:_** "npm i --legacy-peer-deps"
 
 O script acima irá instalar as dependências do projeto.
 Ao terminar de atualizar o projeto , para inicia-lo execute o comando :
